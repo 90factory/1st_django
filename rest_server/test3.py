@@ -48,40 +48,42 @@ data = [
           '10': {'번호': '402160', '분류': '정치개혁', '제목': '이명박 전 대통령 출국 금지 청원','링크': 'https://www1.president.go.kr/petitions/31254', '청원인': 'ver - ***', '청원기간': '17.11.10 ~ 17.12.10','참여인원': '105,942명'}
           },
         ]
-dict = {'0' :  ['500653'], '1' : ['159655'], '2' : ['66242'], '3' : ['19313'], '4' : ['55256']}
-temp_list = []
 
-for i in range(len(dict)):
-    temp_list.append(dict.get(str(i)))
-
-historylist = [y for x in temp_list for y in x]
-print(historylist)
-
-temp_dict = {}
-newnum = 1
-i = 0
-while i < 3:
-    for key,value in data[i].items():
-        for j in range(len(dict)):
-            if historylist[j] in value['링크'][39:]:
-                temp_dict[str(newnum)] = value
-                newnum += 1
-    i += 1
-print(temp_dict)
-history_dict = {}
-
-for key,value in temp_dict.items():
-    for k in range(len(historylist)):
-        if historylist[k] == value['링크'][39:]:
-           history_dict[str(k+1)] = value
-
-s = sorted(history_dict.items())
-
-finaldict = {}
-
-for i in range(len(s)):
-    finaldict[str(s[i][0])] = s[i][1]
-print(finaldict)
+print(data[0]['3'])
+# dict = {'0' :  ['500653'], '1' : ['159655'], '2' : ['66242'], '3' : ['19313'], '4' : ['55256']}
+# temp_list = []
+#
+# for i in range(len(dict)):
+#     temp_list.append(dict.get(str(i)))
+#
+# historylist = [y for x in temp_list for y in x]
+# print(historylist)
+#
+# temp_dict = {}
+# newnum = 1
+# i = 0
+# while i < 3:
+#     for key,value in data[i].items():
+#         for j in range(len(dict)):
+#             if historylist[j] in value['링크'][39:]:
+#                 temp_dict[str(newnum)] = value
+#                 newnum += 1
+#     i += 1
+# print(temp_dict)
+# history_dict = {}
+#
+# for key,value in temp_dict.items():
+#     for k in range(len(historylist)):
+#         if historylist[k] == value['링크'][39:]:
+#            history_dict[str(k+1)] = value
+#
+# s = sorted(history_dict.items())
+#
+# finaldict = {}
+#
+# for i in range(len(s)):
+#     finaldict[str(s[i][0])] = s[i][1]
+# print(finaldict)
 
 # history_dict = {}
 # history_dict['1'] = temp_dict['3']

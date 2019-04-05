@@ -1,5 +1,3 @@
-from bs4 import BeautifulSoup
-from selenium import webdriver
 import json
 
 class Crawler:
@@ -21,32 +19,19 @@ class Crawler:
 
             link = li.find('div', {'class': 'bl_wrap'}).find('div', {'class': 'bl_subject'}).find('a', {'class' : 'cb relpy_w'}).get('href')
 
-            name = li.find('div', {'class': 'bl_wrap'}).find('div', {'class': 'bl_name'}).text.strip('span 청원인')
-
-            period = li.find('div', {'class': 'bl_wrap'}).find('div', {'class': 'bl_date light'}).text.strip('span 청원기간')
+            period = li.find('div', {'class': 'bl_wrap'}).find('div', {'class': 'bl_date light'}).text.strip('span 청원 종료일')
 
             people = li.find('div', {'class': 'bl_wrap'}).find('div', {'class': 'bl_agree cs'}).text.strip('span 참여인원')
 
-            temp_dict[str(num)] = {'번호' : number, '분류' : category, '제목' : title, '링크' : chungwadaelink+link, '청원인' : name, '청원기간' : period, '참여인원' : people}
             if int(people.replace(",", "").strip('명')) >= 200000:
-                del temp_dict[str(num)]
-            num += 1
+                pass
+            else:
+                temp_dict[str(num)] = {'번호': number, '분류': category, '제목': title, '링크': chungwadaelink + link, '청원만료일': period, '참여인원': people}
+                num += 1
 
         return temp_dict
 #============================================================================================================================================================================================
     def makejson(cheongwadae_list):
         with open('crawling_data.json', 'w', encoding='utf-8') as file:  # json을 만들어준다
             json.dump(cheongwadae_list, file, ensure_ascii=False, indent='\t')
-#==============================================================================  Main  ======================================================================================================
-    startpage = 9
-    endpage = 11
-    cheongwadae_list = []
 
-    for page in range(startpage,endpage):
-        driver = webdriver.Chrome('C:\\Users\\buggi\\Downloads\\chromedriver_win32\\chromedriver.exe')
-        driver.get('https://www1.president.go.kr/petitions/category?c=0&only=2&page={}&order=2'.format(page))
-        soup = BeautifulSoup(driver.page_source, 'html.parser')
-        crawlingdata = cheongwadae_crawling(soup)
-        cheongwadae_list.append(crawlingdata)
-
-    makejson(cheongwadae_list)

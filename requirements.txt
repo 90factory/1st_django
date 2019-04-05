@@ -2,6 +2,7 @@ alabaster==0.7.12
 anaconda-client==1.7.2
 anaconda-navigator==1.9.6
 anaconda-project==0.8.2
+APScheduler==3.6.0
 asn1crypto==0.24.0
 astroid==2.1.0
 astropy==3.1
@@ -103,6 +104,7 @@ menuinst==1.4.14
 mistune==0.8.4
 mkl-fft==1.0.6
 mkl-random==1.0.2
+mongoengine==0.17.0
 more-itertools==4.3.0
 mpmath==1.1.0
 msgpack==0.5.6
@@ -178,6 +180,7 @@ queuelib==1.5.0
 requests==2.21.0
 rope==0.11.0
 ruamel-yaml==0.15.46
+schedule==0.6.0
 scikit-image==0.14.1
 scikit-learn==0.20.1
 scipy==1.1.0
@@ -209,6 +212,7 @@ toolz==0.9.0
 tornado==5.1.1
 tqdm==4.28.1
 traitlets==4.3.2
+tzlocal==1.5.1
 unicodecsv==0.14.1
 uritemplate==3.0.0
 urllib3==1.24.1
