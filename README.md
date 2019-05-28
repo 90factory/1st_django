@@ -67,5 +67,6 @@
   ![K-001](https://user-images.githubusercontent.com/41987854/58462772-80924a00-816d-11e9-9544-8afc11edeb31.jpg)
 
 ˚ mydb라는 Database 안에 Crawler라는 collection이 있고 청원한건당 document로 정함 
+˚ filed는 _id(한 document의 고유번호), 번호, 분류, 제목, 링크, 청원만료일, 참여인원 을 기준으로 
 
 
