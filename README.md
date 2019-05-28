@@ -68,6 +68,6 @@
 
 ˚ mydb라는 Database 안에 Crawler라는 collection이 있고 청원한건당 document로 정함 
 
-˚ filed는 _id(한 document의 고유번호), 번호, 분류, 제목, 링크, 청원만료일, 참여인원 을 기준으로 
+˚ filed는 _id(한 document의 고유번호), 번호, 분류, 제목, 링크, 청원만료일, 참여인원 을 기준으로 정함
 
 
